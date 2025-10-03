@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kodex (KDX) Pre-Launch</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+  <style>
+    /* Creative animated gradient background */
+    body {
+      background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+      background-size: 600% 600%;
+      animation: gradientAnimation 20s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+  <header class="text-center py-10">
+    <h1 class="text-4xl font-bold mb-4 animate__animated animate__fadeInDown">Kodex (KDX)</h1>
+    <p class="text-lg max-w-2xl mx-auto animate__animated animate__fadeInUp">
+      Kodex (KDX) is an emerging payment-focused cryptocurrency built on Solana, with its roots firmly planted in Kenya. Revolutionizing digital transactions with speed, low cost, and inclusivity.
+    </p>
+  </header>
+
+  <section class="max-w-4xl mx-auto px-4 py-10 space-y-6">
+    <div class="bg-gray-800 bg-opacity-70 rounded-2xl shadow-lg p-6 transform transition hover:scale-105">
+      <h2 class="text-2xl font-semibold mb-2">Mission-Driven Approach</h2>
+      <p>Kodex bridges financial gaps in Africa where remittance fees are high and banking access is limited. It empowers merchants, freelancers, and individuals with fast, low-cost crypto tools.</p>
+    </div>
+    <div class="bg-gray-800 bg-opacity-70 rounded-2xl shadow-lg p-6 transform transition hover:scale-105">
+      <h2 class="text-2xl font-semibold mb-2">Why Solana?</h2>
+      <p>Solana provides thousands of TPS at ultra-low fees. Perfect for real-world payments, eco-friendly, scalable, and beginner-friendly with Phantom integration.</p>
+    </div>
+    <div class="bg-gray-800 bg-opacity-70 rounded-2xl shadow-lg p-6 transform transition hover:scale-105">
+      <h2 class="text-2xl font-semibold mb-2">Token Details</h2>
+      <ul class="list-disc ml-6">
+        <li>Total Supply: 1,000,000,000 KDX</li>
+        <li>Initial rollout: limited coins, rewarding early adopters with exclusivity and perks.</li>
+        <li>Tokenomics: 40% public sale, 20% liquidity, 15% team, 15% community rewards, 10% treasury.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="text-center py-10 bg-gray-800 bg-opacity-70 rounded-2xl mx-4">
+    <h2 class="text-3xl font-bold mb-4">Join the Waitlist</h2>
+    <form action="https://formspree.io/f/mvgwrlzp" method="POST" class="max-w-md mx-auto space-y-4">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg text-gray-900">
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-lg text-gray-900">
+      <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition transform hover:scale-105">
+        Join Waitlist
+      </button>
+    </form>
+  </section>
+
+  <footer class="text-center py-6 text-gray-300">
+    <p>&copy; 2025 Kodex (KDX). All rights reserved.</p>
+    <p class="mt-2 font-semibold">Funded by The Innercircle</p>
+  </footer>
+
+  <script>
+    // Basic animation fade-in on scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      const faders = document.querySelectorAll('.transform');
+      const appearOptions = { threshold: 0.2 };
+      const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("transition", "duration-1000", "opacity-100");
+          observer.unobserve(entry.target);
+        });
+      }, appearOptions);
+      faders.forEach(fader => {
+        fader.classList.add("opacity-0");
+        appearOnScroll.observe(fader);
+      });
+    });
+  </script>
+</body>
+</html>
